@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Checkout — Sustainable Store</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+  <header class="header"><div class="container header-inner"><a class="brand" href="index.html"><span class="logo">SS</span> Sustainable Store</a><nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a></nav><div><a class="cart-btn" href="cart.html">Cart <span class="cart-badge">0</span></a></div></div></header>
+
+  <main class="container" style="padding-top:1.5rem">
+    <h1>Checkout</h1>
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:1rem">
+      <div class="card">
+        <h3>Billing details</h3>
+        <label>Full name</label>
+        <input id="billing-name" style="width:100%;padding:0.6rem;margin-top:0.4rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"/>
+        <label style="margin-top:0.6rem">Email</label>
+        <input id="billing-email" style="width:100%;padding:0.6rem;margin-top:0.4rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"/>
+        <label style="margin-top:0.6rem">Address</label>
+        <input id="billing-address" style="width:100%;padding:0.6rem;margin-top:0.4rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"/>
+        <div style="margin-top:1rem">
+          <button id="place-order" class="btn btn-primary">Place order (mock)</button>
+        </div>
+      </div>
+      <aside id="checkout-order"></aside>
+    </div>
+    <div style="margin-top:1rem" class="muted">This checkout is a mock. No real payments are processed.</div>
+  </main>
+
+  <footer class="footer"><div class="container" style="display:flex;justify-content:space-between;align-items:center"><div><strong>Sustainable Store</strong><div class="muted">Phone accessories with a conscience</div></div><div class="muted">© <span id="year5"></span> Sustainable Store</div></div></footer>
+
+  <script>document.getElementById('year5').textContent = new Date().getFullYear();</script>
+  <script src="js/app.js"></script>
+</body></html>

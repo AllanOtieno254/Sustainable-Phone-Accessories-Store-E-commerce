@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Shop — Sustainable Store</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="logo">SS</span> Sustainable Store</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:0.6rem">
+        <a class="cart-btn" href="cart.html" aria-label="View cart">Cart <span class="cart-badge">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top:1.5rem">
+    <div style="display:flex;gap:1rem;align-items:flex-start">
+      <aside style="width:260px">
+        <div class="card">
+          <h4>Filters</h4>
+          <label>Category</label>
+          <select id="filter-category" style="width:100%;padding:0.5rem;border-radius:8px;margin-top:0.4rem">
+            <option value="">All</option>
+            <option value="cases">Cases</option>
+            <option value="cables">Cables</option>
+            <option value="powerbanks">Powerbanks</option>
+            <option value="screen-protectors">Screen Protectors</option>
+            <option value="bundles">Bundles</option>
+            <option value="accessories">Accessories</option>
+            <option value="chargers">Chargers</option>
+          </select>
+          <div style="margin-top:0.8rem">
+            <label>Sort by</label>
+            <select id="sort-by" style="width:100%;padding:0.5rem;border-radius:8px;margin-top:0.4rem">
+              <option value="popular">Popular</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+              <option value="new">New</option>
+            </select>
+          </div>
+          <div style="margin-top:0.8rem">
+            <button id="apply-filters" class="btn btn-primary" style="width:100%">Apply</button>
+            <button id="clear-filters" class="btn btn-outline" style="width:100%;margin-top:0.5rem">Clear</button>
+          </div>
+        </div>
+      </aside>
+
+      <section style="flex:1">
+        <h1>Shop</h1>
+        <div id="shop-grid" class="products-grid" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container" style="display:flex;justify-content:space-between;align-items:center"><div><strong>Sustainable Store</strong><div class="muted">Phone accessories with a conscience</div></div><div class="muted">© <span id="year2"></span> Sustainable Store</div></div></footer>
+
+  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+  <script src="js/app.js"></script>
+
+  <!-- Inline script to wire filters to products.json - keeps separation of concerns -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async ()=>{
+      const all = await fetch('/data/products.json').then(r=>r.json());
+      const grid = document.getElementById('shop-grid');
+      function render(list){
+        grid.innerHTML = list.map(p=>{ return `<div class="product card" data-id="${p.id}"><img src="${p.image}" alt="${p.name}"><h4>${p.name}</h4><p class="muted small">${p.short}</p><div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.5rem"><div class="price">${formatCurrency(p.price)}</div><div><button class="btn btn-outline btn-view" data-id="${p.id}">View</button><button class="btn btn-primary btn-add" data-id="${p.id}">Add</button></div></div></div>` }).join('');
+      }
+      render(all);
+      document.getElementById('apply-filters').addEventListener('click', ()=>{
+        const cat = document.getElementById('filter-category').value;
+        const sort = document.getElementById('sort-by').value;
+        let res = all.slice();
+        if(cat) res = res.filter(p=>p.category===cat);
+        if(sort==='price-asc') res.sort((a,b)=>a.price-b.price);
+        if(sort==='price-desc') res.sort((a,b)=>b.price-a.price);
+        if(sort==='popular') res.sort((a,b)=>b.reviews - a.reviews);
+        render(res);
+      });
+      document.getElementById('clear-filters').addEventListener('click', ()=>{ document.getElementById('filter-category').value=''; document.getElementById('sort-by').value='popular'; render(all); });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sustainable Store — Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="logo">SS</span> Sustainable Store</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:0.6rem">
+        <a class="cart-btn" href="cart.html" aria-label="View cart">
+          Cart <span class="cart-badge">0</span>
+        </a>
+        <button class="btn btn-outline mobile-menu-toggle" aria-label="Open menu">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Eco-friendly phone accessories for everyday use</h1>
+          <p class="lead">Premium, sustainable materials — designed for durability and minimal environmental impact.</p>
+          <div style="display:flex;gap:0.6rem">
+            <a class="btn btn-primary" href="shop.html">Shop Now</a>
+            <a class="btn btn-outline" href="about.html">Learn More</a>
+          </div>
+          <div style="margin-top:1.5rem">
+            <h4>Featured categories</h4>
+            <div class="categories">
+              <div class="card">Phone Cases</div>
+              <div class="card">Cables</div>
+              <div class="card">Powerbanks</div>
+              <div class="card">Bundles</div>
+            </div>
+          </div>
+        </div>
+       <div class="card" aria-hidden="true">
+          <div style="height:320px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#eafaf0,#fff); border-radius:8px; overflow:hidden;">
+            <img src="./img/mobile-phone-accessories.jpg" alt="" style="max-width:100%; max-height:100%; object-fit:cover; border-radius:8px;">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>Featured products</h2>
+      <div id="featured-products" class="products-grid" aria-live="polite">
+        <!-- Products loaded by JS -->
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:2rem">
+      <div class="card">
+        <h3>Why choose Sustainable Store?</h3>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem">
+          <div><strong>Eco materials</strong><p class="muted">Made from renewable and recycled sources</p></div>
+          <div><strong>Repairable</strong><p class="muted">Long-lasting designs reduce waste</p></div>
+          <div><strong>We plant trees</strong><p class="muted">Partnered with reforestation programs</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:2rem">
+      <div class="card">
+        <h3>Testimonials</h3>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem">
+          <div class="card">“Great quality and eco-conscious brand” — A.</div>
+          <div class="card">“Love the packaging and materials” — B.</div>
+          <div class="card">“Fast shipping and friendly support” — C.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:2rem">
+      <div class="card">
+        <h3>Join our newsletter</h3>
+        <form id="subscribe-form" style="display:flex;gap:0.5rem;margin-top:0.8rem">
+          <input id="subscribe-email" type="email" placeholder="you@example.com" style="padding:0.6rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06);flex:1"/>
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <strong>Sustainable Store</strong><div class="muted">Phone accessories with a conscience</div>
+      </div>
+      <div class="muted">© <span id="year"></span> Sustainable Store</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/app.js"></script>
+</body>
+</html>

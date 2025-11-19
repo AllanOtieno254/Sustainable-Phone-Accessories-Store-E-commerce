@@ -1,0 +1,15 @@
+
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Cart — Sustainable Store</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+  <header class="header"><div class="container header-inner"><a class="brand" href="index.html"><span class="logo">SS</span> Sustainable Store</a><nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a></nav><div><a class="cart-btn" href="cart.html">Cart <span class="cart-badge">0</span></a></div></div></header>
+  <main class="container" style="padding-top:1.5rem">
+    <h1>Your cart</h1>
+    <div id="cart-list"></div>
+    <div id="cart-summary" style="margin-top:1rem"></div>
+    <div style="margin-top:1rem"><button id="clear-cart" class="btn btn-outline">Clear cart</button></div>
+  </main>
+  <footer class="footer"><div class="container" style="display:flex;justify-content:space-between;align-items:center"><div><strong>Sustainable Store</strong><div class="muted">Phone accessories with a conscience</div></div><div class="muted">© <span id="year4"></span> Sustainable Store</div></div></footer>
+  <script>document.getElementById('year4').textContent = new Date().getFullYear();</script>
+  <script src="js/app.js"></script>
+</body></html>

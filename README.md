@@ -4,23 +4,6 @@ Welcome to the **Sustainable Phone Accessories Store** — a small e-commerce pl
 
 ---
 
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Website Pages](#website-pages)
-- [Features & Functionality](#features--functionality)
-- [UI/UX Design](#uiux-design)
-- [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Installation & Running Locally](#installation--running-locally)
-- [Screenshots](#screenshots)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
----
-
 ## Project Overview
 
 This project is a **small niche e-commerce website** that sells sustainable phone accessories. The goal is to practice **frontend development skills** including HTML, CSS, and JavaScript, while creating a **professional, modern, and user-friendly web experience**.

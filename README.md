@@ -8,7 +8,7 @@ Welcome to the **Sustainable Phone Accessories Store** — a small e-commerce pl
 
 This project is a **small niche e-commerce website** that sells sustainable phone accessories. The goal is to practice **frontend development skills** including HTML, CSS, and JavaScript, while creating a **professional, modern, and user-friendly web experience**.
 
-The website is **fully responsive** and designed for small catalogs (10–50 SKUs), with product pages, category pages, and a mock shopping cart system.
+The website is **fully responsive** and designed for small catalogs (10–50 SKUs), with product pages, category pages, and a mock shopping cart  system.
 
 ---
 
